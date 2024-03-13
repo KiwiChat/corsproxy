@@ -23,8 +23,7 @@ var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
   // originWhitelist: originWhitelist,
-  // originWhitelist: [], // Allow all origins
-  originWhitelist: ['http://live.radioclick.ro:8008/index.html?sid=1'], // lrr origins
+  originWhitelist: [], // Allow all origins
   // requireHeader: ['origin', 'x-requested-with'],
   // requireHeader: [],
   requireHeader: parseEnvList(process.env.CORSANYWHERE_HEADERS),

@@ -22,7 +22,7 @@ var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELI
 var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
   // originBlacklist: originBlacklist,
-     originBlacklist: parseEnvList(process.env.CORSANYWHERE_BLACKLIST),
+     originBlacklist: ['https://google.com', 'yahoo.com']
   // originWhitelist: originWhitelist,
   originWhitelist: [], // Allow all origins
   // requireHeader: ['origin', 'x-requested-with'],

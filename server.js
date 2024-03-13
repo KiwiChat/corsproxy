@@ -23,12 +23,15 @@ var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
   // originWhitelist: originWhitelist,
-  originWhitelist: [], // Allow all origins
+  // originWhitelist: [], // Allow all origins
+  originWhitelist: ['http://live.radioclick.ro:8008'], // lrr origins
   // requireHeader: ['origin', 'x-requested-with'],
   // requireHeader: [],
   requireHeader: parseEnvList(process.env.CORSANYWHERE_HEADERS),
   checkRateLimit: checkRateLimit,
   removeHeaders: [
+    'origin',
+    'referer',
     'cookie',
     'cookie2',
     // Strip Heroku-specific headers
